@@ -12,7 +12,7 @@
                 {
                     "exe_lnk": "https://github.com/mob41/osumer/releases/download/0.0.2-SNAPSHOT/osumer.exe",
                     "jar_link": "https://github.com/mob41/osumer/releases/download/0.0.2-SNAPSHOT/osumer.jar",
-                    "ended": true
+                    "ended": false
                 }
             ],
             "0.0.3": [
