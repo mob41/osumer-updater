@@ -17,11 +17,11 @@
                     "ended": true
                 }
             ],
-            "0.0.3": [
+            "0.1.0": [
                 {
-                    "web_link": "https://github.com/mob41/osumer/releases/0.0.3-SNAPSHOT/",
-                    "exe_link": "https://github.com/mob41/osumer/releases/download/0.0.3-SNAPSHOT/osumer.exe",
-                    "jar_link": "https://github.com/mob41/osumer/releases/download/0.0.3-SNAPSHOT/osumer.jar",
+                    "web_link": "https://github.com/mob41/osumer/releases/0.1.0-SNAPSHOT-b1/",
+                    "exe_link": "https://github.com/mob41/osumer/releases/download/0.1.0-SNAPSHOT-b1/osumer.exe",
+                    "jar_link": "https://github.com/mob41/osumer/releases/download/0.1.0-SNAPSHOT-b1/osumer.jar",
                     "ended": false
                 }
             ]
