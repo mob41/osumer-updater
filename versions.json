@@ -30,6 +30,14 @@
                     "web_link": "https://github.com/mob41/osumer/releases/0.1.1-SNAPSHOT-b1/",
                     "exe_link": "https://github.com/mob41/osumer/releases/download/0.1.1-SNAPSHOT-b1/osumer.exe",
                     "jar_link": "https://github.com/mob41/osumer/releases/download/0.1.1-SNAPSHOT-b1/osumer.jar",
+                    "ended": true
+                }
+            ],
+            "0.1.2": [
+                {
+                    "web_link": "https://github.com/mob41/osumer/releases/0.1.2-SNAPSHOT-b1/",
+                    "exe_link": "https://github.com/mob41/osumer/releases/download/0.1.2-SNAPSHOT-b1/osumer.exe",
+                    "jar_link": "https://github.com/mob41/osumer/releases/download/0.1.2-SNAPSHOT-b1/osumer.jar",
                     "ended": false
                 }
             ]
