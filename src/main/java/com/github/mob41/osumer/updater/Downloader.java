@@ -1,34 +1,15 @@
-/*******************************************************************************
- * MIT License
- *
- * Copyright (c) 2017 Anthony Law
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- *******************************************************************************/
 package com.github.mob41.osumer.updater;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.RandomAccessFile;
+import java.net.HttpCookie;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.util.Observable;
 
 import com.github.mob41.osumer.exceptions.DebugDump;
@@ -52,15 +33,18 @@ public class Downloader extends Observable implements Runnable{
 	
 	private final String folder;
 	
+	private final String fileName;
+	
 	private int size = -1;
 	
 	private int downloaded = 0;
 	
 	private int status;
 
-	public Downloader(String downloadFolder, URL downloadUrl) {
+	public Downloader(String downloadFolder, String fileName, URL downloadUrl) {
 		this.url = downloadUrl;
 		this.folder = downloadFolder;
+		this.fileName = fileName;
 		
 		status = DOWNLOADING;
 		
@@ -98,7 +82,7 @@ public class Downloader extends Observable implements Runnable{
 		status = CANCELLED;
 		reportState();
 		
-		File file = new File(folder + "\\" + toFilename(url) + ".osz");
+		File file = new File(folder + "\\" + fileName + ".osz");
 		file.delete();
 		
 		downloaded = 0;
@@ -114,11 +98,21 @@ public class Downloader extends Observable implements Runnable{
 		thread.start();
 	}
 	
-	public static String toFilename(URL url){
-		String str = url.getFile();
-		return str.substring(str.lastIndexOf('/') + 1);
+	private static void printAllHeaders(Map<String, List<String>> headers){
+		Iterator<String> it = headers.keySet().iterator();
+		List<String> strs;
+		String key;
+		while (it.hasNext()){
+			key = it.next();
+			strs = headers.get(key);
+			
+			for (int i = 0; i < strs.size(); i++){
+				System.out.println(key + " (" + i + "):" + strs.get(i));
+			}
+		}
+		
 	}
-	
+
 	@Override
 	public void run() {
 		RandomAccessFile file = null;
@@ -128,6 +122,7 @@ public class Downloader extends Observable implements Runnable{
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			
 			conn.setRequestProperty("Range", "bytes=" + downloaded + "-");
+			
 			
 			conn.connect();
 			
@@ -146,7 +141,7 @@ public class Downloader extends Observable implements Runnable{
 				reportState();
 			}
 			
-			file = new RandomAccessFile(folder + "\\" + toFilename(url) + ".osz", "rw");
+			file = new RandomAccessFile(folder + "\\" + fileName, "rw");
 			file.seek(downloaded);
 			
 			in = conn.getInputStream();
@@ -202,6 +197,23 @@ public class Downloader extends Observable implements Runnable{
 	private void reportState(){
 		setChanged();
 		notifyObservers();
+	}
+	
+	private static String join(String separator, List<HttpCookie> objs){
+		String out = "";
+		
+		String str;
+		for (int i = 0; i < objs.size(); i++){
+			str = objs.get(i).toString();
+			
+			out += str + separator;
+			
+			if (i != objs.size() - 1){
+				out += " ";
+			}
+		}
+		
+		return out;
 	}
 
 }

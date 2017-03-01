@@ -32,6 +32,7 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.Calendar;
 
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -177,8 +178,8 @@ public class UIFrame extends JFrame {
 								URL url = new URL(verInfo.getExeLink());
 
 								String dwnFolder = System.getProperty("java.io.tmpdir");
-								String dwnFile = Downloader.toFilename(url);
-								Downloader dwn = new Downloader(dwnFolder, url);
+								String dwnFile = verStr + "_" + Calendar.getInstance().getTimeInMillis();
+								Downloader dwn = new Downloader(dwnFolder, dwnFile + ".exe", url);
 								
 								while (dwn.getStatus() == Downloader.DOWNLOADING){
 									if (thread.isInterrupted()){
@@ -190,26 +191,44 @@ public class UIFrame extends JFrame {
 								}
 								
 								if (dwn.getStatus() == Downloader.COMPLETED){
-									lblStatus.setText("Installing");
 									pb.setIndeterminate(true);
 									
 									Installer installer = new Installer();
 									
-									try {
-										installer.install(verInfo.getVersion(), Updater.getBranchStr(verInfo.getBranch()), verInfo.getBuildNum(), dwnFolder + "\\" + dwnFile);
-										
-										if (Installer.isInstalled()){
-											startOsumer = true;
-											lblStatus.setForeground(Color.GREEN);
-											lblStatus.setText("Success");
-											pb.setIndeterminate(false);
+									boolean stillInstall = true;
+									if (Installer.isInstalled()){
+										lblStatus.setText("Uninstalling");
+										try {
+											installer.uninstall();
+										} catch (DebuggableException e) {
+											stillInstall = false;
+											closeUpdater = false;
+											e.printStackTrace();
+											lblStatus.setForeground(Color.RED);
+											lblStatus.setText("Uninstall failed");
+											DebugDump.showDebugDialog(e.getDump());
 										}
-									} catch (DebuggableException e){
-										closeUpdater = false;
-										e.printStackTrace();
-										DebugDump.showDebugDialog(e.getDump());
-										lblStatus.setForeground(Color.RED);
-										lblStatus.setText("Install failed");
+									}
+									
+									if (stillInstall){
+										lblStatus.setText("Installing");
+										
+										try {
+											installer.install(verInfo.getVersion(), Updater.getBranchStr(verInfo.getBranch()), verInfo.getBuildNum(), dwnFolder + "\\" +  dwnFile + ".exe");
+											
+											if (Installer.isInstalled()){
+												startOsumer = true;
+												lblStatus.setForeground(Color.GREEN);
+												lblStatus.setText("Success");
+												pb.setIndeterminate(false);
+											}
+										} catch (DebuggableException e){
+											closeUpdater = false;
+											e.printStackTrace();
+											lblStatus.setForeground(Color.RED);
+											lblStatus.setText("Install failed");
+											DebugDump.showDebugDialog(e.getDump());
+										}
 									}
 								} else {
 									closeUpdater = false;
