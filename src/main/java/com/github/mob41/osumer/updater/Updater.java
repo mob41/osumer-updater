@@ -30,6 +30,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Iterator;
 
@@ -213,22 +214,25 @@ public class Updater {
 			} else {
 				last = key;
 			}
-			
-			buildsArr = versionsJson.getJSONArray(key);
-			
-			int latest = buildsArr.length();
-			
-			JSONObject verJson = buildsArr.getJSONObject(latest - 1);
-			
-			String webLink = verJson.isNull("web_link") ? null : verJson.getString("web_link");
-			String exeLink = verJson.isNull("exe_link") ? null : verJson.getString("exe_link");
-			String jarLink = verJson.isNull("jar_link") ? null : verJson.getString("jar_link");
-			
-			boolean isThisVersion = thisInfo != null && key.equals(thisInfo.getVersion()) &&
-					latest == thisInfo.getBuildNum() && getBranchStr(updateSource).equals(thisInfo.getBranch());
-			return new UpdateInfo(key, updateSource, latest, webLink, exeLink, jarLink, isThisVersion, !isThisVersion);
 		}
-		return null;
+		
+		if (last == null){
+			return null;
+		}
+		
+		buildsArr = versionsJson.getJSONArray(last);
+		
+		int latest = buildsArr.length();
+		
+		JSONObject verJson = buildsArr.getJSONObject(latest - 1);
+		
+		String webLink = verJson.isNull("web_link") ? null : verJson.getString("web_link");
+		String exeLink = verJson.isNull("exe_link") ? null : verJson.getString("exe_link");
+		String jarLink = verJson.isNull("jar_link") ? null : verJson.getString("jar_link");
+		
+		boolean isThisVersion = thisInfo != null && last.equals(thisInfo.getVersion()) &&
+				latest == thisInfo.getBuildNum() && getBranchStr(updateSource).equals(thisInfo.getBranch());
+		return new UpdateInfo(last, updateSource, latest, webLink, exeLink, jarLink, isThisVersion, !isThisVersion);
 	}
 	
 	public boolean isUpdateAvailable() throws DebuggableException{
@@ -252,8 +256,11 @@ public class Updater {
 		int[] ver1sub = separateVersion(ver1);
 		
 		if (ver0sub == null || ver1sub == null){
+			System.out.println("ERROR -2");
 			return -2;
 		}
+		System.out.println("VER0: " + Arrays.toString(ver0sub));
+		System.out.println("VER1: " + Arrays.toString(ver1sub));
 		
 		return compareVersion(ver0sub[0], ver0sub[1], ver0sub[2], ver1sub[0], ver1sub[1], ver1sub[2]);
 	}
@@ -316,6 +323,7 @@ public class Updater {
 				try {
 					out[outIndex] = Integer.parseInt(str);
 				} catch (NumberFormatException e){
+					e.printStackTrace();
 					return null;
 				}
 				
