@@ -67,12 +67,15 @@ public class UIFrame extends JFrame {
 	private JLabel lblStatus;
 	private JProgressBar pb;
 	private JButton btnCancel;
+	
+	private final boolean forceInstall;
 
 	/**
 	 * Create the frame.
 	 */
-	public UIFrame(Config config) {
+	public UIFrame(Config config, boolean forceInstall) {
 		this.config = config;
+		this.forceInstall = forceInstall;
 		
 		setTitle("osumer-updater");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(UIFrame.class.getResource("/com/github/mob41/osumer/updater/osumerIcon_32px.png")));
@@ -167,11 +170,17 @@ public class UIFrame extends JFrame {
 							lblStatus.setText("Available update to " + verStr);
 						}
 						
-						int option = JOptionPane.showOptionDialog(UIFrame.this,
-								installing ? "Install " + verStr + " now?" : "Update available! New version:\n" + verStr + "\n\nDo you want to update it now?\n\n",
-								installing ? "Installation" : "Update available", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, JOptionPane.NO_OPTION);
+						boolean startInstall = false;
+						if (!forceInstall){
+							int option = JOptionPane.showOptionDialog(UIFrame.this,
+										installing ? "Install " + verStr + " now?" : "Update available! New version:\n" + verStr + "\n\nDo you want to update it now?\n\n",
+										installing ? "Installation" : "Update available", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, JOptionPane.NO_OPTION);
+							startInstall = option == JOptionPane.YES_OPTION;
+						} else {
+							startInstall = true;
+						}
 						
-						if (option == JOptionPane.YES_OPTION){
+						if (startInstall){
 							try {
 								lblStatus.setText("Downloading");
 								pb.setStringPainted(true);

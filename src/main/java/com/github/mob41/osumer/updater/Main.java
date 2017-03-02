@@ -43,6 +43,8 @@ public class Main {
 	public static void main(String[] args) {
 		System.out.println(INTRO);
 		
+		ArgParser ap = new ArgParser(args);
+		
 		if (GraphicsEnvironment.isHeadless()){
 			System.out.println("Error: The updater requires a graphics user interface environment.");
 			return;
@@ -83,7 +85,7 @@ public class Main {
 			return;
 		}
 		
-		UIFrame frame = new UIFrame(config);
+		UIFrame frame = new UIFrame(config, ap.isInstall());
 		frame.setVisible(true);
 	}
 
