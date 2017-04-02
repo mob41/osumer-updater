@@ -222,7 +222,7 @@ public class UIFrame extends JFrame {
 												DebugDump.showDebugDialog(e.getDump());
 											}
 										} else {
-											ProcessBuilder pb = new ProcessBuilder("cmd /C \"C:\\Program Files\\osumer\\osumer.exe\" -uninstall -quiet");
+											ProcessBuilder pb = new ProcessBuilder("cmd.exe", "/C", "\"C:\\Program Files\\osumer\\osumer.exe\" -uninstall -quiet");
 											try {
 												Process proc = pb.start();
 												BufferedReader reader = new BufferedReader(new InputStreamReader(proc.getInputStream()));
@@ -281,7 +281,7 @@ public class UIFrame extends JFrame {
 										
 										if (Updater.compareVersion(verInfo.getVersion(), "1.0.1") == -1){
 											try {
-												installer.install(verInfo.getVersion(), Updater.getBranchStr(verInfo.getBranch()), verInfo.getBuildNum(), dwnFolder + "\\" +  dwnFile + ".exe");
+												installer.install(verInfo.getVersion(), Updater.getBranchStr(verInfo.getBranch()), verInfo.getBuildNum(), dwnFolder +  dwnFile + ".exe");
 												
 												if (Installer.isInstalled()){
 													startOsumer = true;
@@ -297,7 +297,7 @@ public class UIFrame extends JFrame {
 												DebugDump.showDebugDialog(e.getDump());
 											}
 										} else {
-											ProcessBuilder procb = new ProcessBuilder("cmd /C \"" + dwnFolder + "\\" +  dwnFile + ".exe\" -install -quiet");
+											ProcessBuilder procb = new ProcessBuilder("cmd.exe", "/C", "\"" + dwnFolder + dwnFile + ".exe\" -install -quiet");
 											try {
 												Process proc = procb.start();
 												BufferedReader reader = new BufferedReader(new InputStreamReader(proc.getInputStream()));
