@@ -27,7 +27,9 @@ import java.awt.Color;
 import java.awt.Desktop;
 import java.awt.Font;
 import java.awt.Toolkit;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -207,36 +209,150 @@ public class UIFrame extends JFrame {
 									boolean stillInstall = true;
 									if (Installer.isInstalled()){
 										lblStatus.setText("Uninstalling");
-										try {
-											installer.uninstall();
-										} catch (DebuggableException e) {
-											stillInstall = false;
-											closeUpdater = false;
-											e.printStackTrace();
-											lblStatus.setForeground(Color.RED);
-											lblStatus.setText("Uninstall failed");
-											DebugDump.showDebugDialog(e.getDump());
+										
+										if (Updater.compareVersion(thisVerInfo.getVersion(), "1.0.1") == -1){
+											try {
+												installer.uninstall();
+											} catch (DebuggableException e) {
+												stillInstall = false;
+												closeUpdater = false;
+												e.printStackTrace();
+												lblStatus.setForeground(Color.RED);
+												lblStatus.setText("Uninstall failed");
+												DebugDump.showDebugDialog(e.getDump());
+											}
+										} else {
+											ProcessBuilder pb = new ProcessBuilder("cmd /C \"C:\\Program Files\\osumer\\osumer.exe\" -uninstall -quiet");
+											try {
+												Process proc = pb.start();
+												BufferedReader reader = new BufferedReader(new InputStreamReader(proc.getInputStream()));
+												String line;
+												boolean success = false;
+												
+												String errorText = "";
+												boolean errorNext = false;
+												boolean readNext = false;
+												while ((line = reader.readLine()) != null){
+													if (readNext){
+														if (line.equals("Info@D$") || line.equals("Error@D$")){
+															readNext = false;
+														} else {
+															readNext = true;
+														}
+														
+														if (errorNext){
+															errorText += line;
+															break;
+														} else if (line.startsWith("Uninstallation success")){
+															success = true;
+															break;
+														}
+													} else if (line.equals("Info@U$") || line.equals("Error@U$")){
+														readNext = true;
+														
+														if (line.equals("Error@U$")){
+															errorNext = true;
+														}
+													}
+												}
+												
+												reader.close();
+												
+												if (!success){
+													stillInstall = false;
+													closeUpdater = false;
+													lblStatus.setForeground(Color.RED);
+													lblStatus.setText("Uninstall failed");
+													JOptionPane.showMessageDialog(UIFrame.this, "Error reported from executable:\n" + errorText, "Error", JOptionPane.ERROR_MESSAGE);
+												}
+											} catch (IOException e) {
+												stillInstall = false;
+												closeUpdater = false;
+												e.printStackTrace();
+												lblStatus.setForeground(Color.RED);
+												lblStatus.setText("Uninstall failed");
+												JOptionPane.showMessageDialog(UIFrame.this, "Error: " + e, "Error", JOptionPane.ERROR_MESSAGE);
+											}
 										}
 									}
 									
 									if (stillInstall){
 										lblStatus.setText("Installing");
 										
-										try {
-											installer.install(verInfo.getVersion(), Updater.getBranchStr(verInfo.getBranch()), verInfo.getBuildNum(), dwnFolder + "\\" +  dwnFile + ".exe");
-											
-											if (Installer.isInstalled()){
-												startOsumer = true;
-												lblStatus.setForeground(Color.GREEN);
-												lblStatus.setText("Success");
-												pb.setIndeterminate(false);
+										if (Updater.compareVersion(verInfo.getVersion(), "1.0.1") == -1){
+											try {
+												installer.install(verInfo.getVersion(), Updater.getBranchStr(verInfo.getBranch()), verInfo.getBuildNum(), dwnFolder + "\\" +  dwnFile + ".exe");
+												
+												if (Installer.isInstalled()){
+													startOsumer = true;
+													lblStatus.setForeground(Color.GREEN);
+													lblStatus.setText("Success");
+													pb.setIndeterminate(false);
+												}
+											} catch (DebuggableException e){
+												closeUpdater = false;
+												e.printStackTrace();
+												lblStatus.setForeground(Color.RED);
+												lblStatus.setText("Install failed");
+												DebugDump.showDebugDialog(e.getDump());
 											}
-										} catch (DebuggableException e){
-											closeUpdater = false;
-											e.printStackTrace();
-											lblStatus.setForeground(Color.RED);
-											lblStatus.setText("Install failed");
-											DebugDump.showDebugDialog(e.getDump());
+										} else {
+											ProcessBuilder procb = new ProcessBuilder("cmd /C \"" + dwnFolder + "\\" +  dwnFile + ".exe\" -install -quiet");
+											try {
+												Process proc = procb.start();
+												BufferedReader reader = new BufferedReader(new InputStreamReader(proc.getInputStream()));
+												String line;
+												boolean success = false;
+												
+												String errorText = "";
+												boolean errorNext = false;
+												boolean readNext = false;
+												while ((line = reader.readLine()) != null){
+													if (readNext){
+														if (line.equals("Info@D$") || line.equals("Error@D$")){
+															readNext = false;
+														} else {
+															readNext = true;
+														}
+														
+														if (errorNext){
+															errorText += line;
+															break;
+														} else if (line.startsWith("Installation success")){
+															success = true;
+															break;
+														}
+													} else if (line.equals("Info@U$") || line.equals("Error@U$")){
+														readNext = true;
+														
+														if (line.equals("Error@U$")){
+															errorNext = true;
+														}
+													}
+												}
+												
+												reader.close();
+												
+												if (!success){
+													closeUpdater = false;
+													lblStatus.setForeground(Color.RED);
+													lblStatus.setText("Install failed");
+													JOptionPane.showMessageDialog(UIFrame.this, "Error reported from executable:\n" + errorText, "Error", JOptionPane.ERROR_MESSAGE);
+												} else {
+													if (Installer.isInstalled()){
+														startOsumer = true;
+														lblStatus.setForeground(Color.GREEN);
+														lblStatus.setText("Success");
+														pb.setIndeterminate(false);
+													}
+												}
+											} catch (IOException e) {
+												closeUpdater = false;
+												e.printStackTrace();
+												lblStatus.setForeground(Color.RED);
+												lblStatus.setText("Install failed");
+												JOptionPane.showMessageDialog(UIFrame.this, "Error: " + e, "Error", JOptionPane.ERROR_MESSAGE);
+											}
 										}
 									}
 								} else {
