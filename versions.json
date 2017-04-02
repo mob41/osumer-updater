@@ -58,7 +58,7 @@
 					"desc": "Wow, I am glad to introduce osumer version 1.0.0 snapshot version here! In this version, updater things are mainly focused.\n\nChange-log: \n- Added osumer-updater to handle all installations and updates\n- Added change-log viewer\n- Added support for in-app updating\n\nKnown bugs:\n- The application cannot be uninstalled if launched via osumer-updater"
                 }
             ],
-            "1.0.0": [
+            "1.0.1": [
                 {
                     "web_link": "https://github.com/mob41/osumer/releases/1.0.1-SNAPSHOT-b1/",
                     "exe_link": "https://github.com/mob41/osumer/releases/download/1.0.1-SNAPSHOT-b1/osumer.exe",
