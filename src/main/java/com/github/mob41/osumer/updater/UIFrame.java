@@ -378,7 +378,7 @@ public class UIFrame extends JFrame {
 					
 					if (startOsumer){
 						try {
-							Runtime.getRuntime().exec(Installer.winPath + "\\" + Installer.winFile);
+							Runtime.getRuntime().exec("cmd /C \"" + Installer.winPath + "\\" + Installer.winFile + "\"");
 						} catch (IOException e) {
 							JOptionPane.showMessageDialog(UIFrame.this, "Unable to startup osumer", "Error", JOptionPane.ERROR_MESSAGE);
 						}
