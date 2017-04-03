@@ -72,8 +72,17 @@
                     "web_link": "https://github.com/mob41/osumer/releases/1.0.2-SNAPSHOT-b1/",
                     "exe_link": "https://github.com/mob41/osumer/releases/download/1.0.2-SNAPSHOT-b1/osumer.exe",
                     "jar_link": "https://github.com/mob41/osumer/releases/download/1.0.2-SNAPSHOT-b1/osumer.jar",
-                    "ended": false,
+                    "ended": true,
 					"desc": "Minor bugs fixes after 1.0.1\n\n- Fixes \"This is an old version\" typo\n- Fixes change-log viewer to not be editable\n\nUnfortunately, the following bug still cannot be fixed:\n\n- The application cannot be uninstalled if launched via osumer-updater"
+                }
+            ],
+            "1.0.3": [
+                {
+                    "web_link": "https://github.com/mob41/osumer/releases/1.0.3-SNAPSHOT-b1/",
+                    "exe_link": "https://github.com/mob41/osumer/releases/download/1.0.3-SNAPSHOT-b1/osumer.exe",
+                    "jar_link": "https://github.com/mob41/osumer/releases/download/1.0.3-SNAPSHOT-b1/osumer.jar",
+                    "ended": false,
+					"desc": "This will (might) be the last release of 1.x.x series and I will start developing 2.x.x series.\nFurther releases of 1.x.x are just bugs fixes without major features additions.\nA month later without bugs, this release will be promoted to stable.\n\nIn this version, minor bugs are fixed\n\n- Fixed crashing download when the beatmap name contains special characters (not supported in Windows)\n- Fixed AlwaysOnTop with download dialog\n\nThis bug still exists, and probably won't be fixed if I don't have time:\n\n- Cannot uninstall osumer if launched from osumer-updater (File in use problem, we have to get another process to remove osumer.exe)"
                 }
             ]
         },
