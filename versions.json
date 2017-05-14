@@ -90,8 +90,17 @@
                     "web_link": "https://github.com/mob41/osumer/releases/1.0.4-SNAPSHOT-b1/",
                     "exe_link": "https://github.com/mob41/osumer/releases/download/1.0.4-SNAPSHOT-b1/osumer.exe",
                     "jar_link": "https://github.com/mob41/osumer/releases/download/1.0.4-SNAPSHOT-b1/osumer.jar",
-                    "ended": false,
+                    "ended": true,
 					"desc": "This will (might) be the last release of 1.x.x series and I will start developing 2.x.x series.\nFurther releases of 1.x.x are just bugs fixes without major features additions.\nA month later without bugs, this release will be promoted to stable.\n\nMinor bugs fixes, but it seems to major bugs fixes if the user has an space in their names. (e.g. Maria John)\n\n- Fixes installer to decode URL of running file path\n- Code optimizations\n- Copyright optimizations\n\nThis bug still not fixed\n\n- Cannot uninstall osumer if launched from osumer-updater. You just need to use a external osumer (not from Program Files) to uninstall and everything is okay!"
+                }
+            ],
+            "1.0.5": [
+                {
+                    "web_link": "https://github.com/mob41/osumer/releases/1.0.5-SNAPSHOT-b1/",
+                    "exe_link": "https://github.com/mob41/osumer/releases/download/1.0.5-SNAPSHOT-b1/osumer.exe",
+                    "jar_link": "https://github.com/mob41/osumer/releases/download/1.0.5-SNAPSHOT-b1/osumer.jar",
+                    "ended": false,
+					"desc": "This will (might) be the last release of 1.x.x series and I will start developing 2.x.x series.\nFurther releases of 1.x.x are just bugs fixes without major features additions.\nA month later without bugs, this release will be promoted to stable.\n\nMajor bug fixes in this version.\n\n- Fixes download crashes in beatmaps name with special characters that are not supported in Windows\n- Blocks uninstallation if launched in Program Files\n\nThis bug still not fixed\n\n- Cannot uninstall osumer if launched from osumer-updater. You just need to use a external osumer (not from Program Files) to uninstall and everything is okay!"
                 }
             ]
         },
