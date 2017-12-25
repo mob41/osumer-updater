@@ -108,10 +108,19 @@
                     "web_link": "https://github.com/mob41/osumer/releases/1.0.6-SNAPSHOT-b1/",
                     "exe_link": "https://github.com/mob41/osumer/releases/download/1.0.6-SNAPSHOT-b1/osumer.exe",
                     "jar_link": "https://github.com/mob41/osumer/releases/download/1.0.6-SNAPSHOT-b1/osumer.jar",
-                    "ended": false,
+                    "ended": true,
 					"desc": "Ready for osumer2 update! osumer2 is going to be distributed on Late October!\n\nThis will (might) be the last release of 1.x.x series and I will start developing 2.x.x series.\nFurther releases of 1.x.x are just bugs fixes without major features additions.\nA month later without bugs, this release will be promoted to stable.\n\nBug fix(es):\n\n- Fixes osu! account unable to login bug\n    - osu! forum login is now redirected to ```index.php?success=xyzabc``` instead of just ```index.php```\n\nThis bug still not fixed\n\n- Cannot uninstall osumer if launched from osumer-updater. You just need to use a external osumer (not from Program Files) to uninstall and everything is okay!"
                 }
-            ]
+            ],
+            "2.0.0": [
+                {
+                    "web_link": "https://github.com/mob41/osumer/releases/2.0.0-SNAPSHOT-b1/",
+                    "exe_link": "https://github.com/mob41/osumer/releases/download/2.0.0-SNAPSHOT-b1/osumer.exe",
+                    "jar_link": "https://github.com/mob41/osumer/releases/download/2.0.0-SNAPSHOT-b1/osumer.jar",
+                    "ended": false,
+					"desc": "This is a experimental release of osumer2. There might be bugs in it, but it should work properly. Please do not hesitate reporting those bugs.\n\n- Added queuing\n- Added background downloading\n- Added background download sound\n- Added osumer2 daemon\n- Added beatmap searching and managing\n- Added more customizable preferences\n- Added better updater algorithm\n\nSome features such as beatmap managing, Plugins, Security and Getting Started are not implemented. These will be added in further builds.\nTutorials can be found at \"https://github.com/mob41/osumer/wiki/osumer-tutorial\". It is still building though.\n\nThank you for your support in osumer. Put a star to this project would help me to continue developing in it!"
+                }
+            
         },
         "beta": {
         
