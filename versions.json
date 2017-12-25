@@ -120,7 +120,7 @@
                     "ended": false,
 					"desc": "This is a experimental release of osumer2. There might be bugs in it, but it should work properly. Please do not hesitate reporting those bugs.\n\n- Added queuing\n- Added background downloading\n- Added background download sound\n- Added osumer2 daemon\n- Added beatmap searching and managing\n- Added more customizable preferences\n- Added better updater algorithm\n\nSome features such as beatmap managing, Plugins, Security and Getting Started are not implemented. These will be added in further builds.\nTutorials can be found at \"https://github.com/mob41/osumer/wiki/osumer-tutorial\". It is still building though.\n\nThank you for your support in osumer. Put a star to this project would help me to continue developing in it!"
                 }
-            
+            ]
         },
         "beta": {
         
