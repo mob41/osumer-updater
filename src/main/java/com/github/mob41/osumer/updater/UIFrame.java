@@ -30,7 +30,11 @@ import java.awt.Toolkit;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.InetAddress;
 import java.net.MalformedURLException;
+import java.net.ServerSocket;
+import java.net.Socket;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -55,6 +59,8 @@ import com.github.mob41.osumer.exceptions.DumpManager;
 import com.github.mob41.osumer.exceptions.NoBuildsForVersionException;
 import com.github.mob41.osumer.exceptions.NoSuchBuildNumberException;
 import com.github.mob41.osumer.exceptions.NoSuchVersionException;
+import com.github.mob41.osumer.exceptions.ErrorDumpDialog;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -208,6 +214,39 @@ public class UIFrame extends JFrame {
 									
 									boolean stillInstall = true;
 									if (Installer.isInstalled()){
+									    if (!testPortFree(46725)) {
+									        lblStatus.setText("Stopping daemon");
+									        try {
+								                Socket socket = new Socket(InetAddress.getLoopbackAddress().getHostName(), 46725);
+								                socket.setSoTimeout(5000);
+
+								                PrintWriter writer = new PrintWriter(socket.getOutputStream());
+								                writer.println("STOP");
+								                writer.flush();
+								                socket.close();
+								                
+								                long startTime = System.currentTimeMillis();
+								                while ((System.currentTimeMillis() - startTime) <= 5000 && !testPortFree(46725)) {
+								                    try {
+                                                        Thread.sleep(1000);
+                                                    } catch (InterruptedException e) {}
+								                }
+								                
+								                while(!testPortFree(46725)) {
+								                    JOptionPane.showMessageDialog(UIFrame.this, "osumer-updater could not shutdown osumer2 daemon.\nPlease manually close it via \"osumer2\" - > \"Exit\" -> \"Yes\"\nAnd press OK to continue.", "Info", JOptionPane.INFORMATION_MESSAGE);
+								                }
+								            } catch (IOException e) {
+								                e.printStackTrace();
+								                DebugDump dump = new DebugDump(null, null, "Opening connection to BG osumer socket", null,
+								                        "Could not open socket at 46725 for BG call. Not osumer running at that port?", false, e);
+								                DumpManager.getInstance().addDump(dump);
+								                ErrorDumpDialog dialog = new ErrorDumpDialog(dump);
+								                dialog.setModal(true);
+								                dialog.setVisible(true);
+								                System.exit(-1);
+								                return;
+								            }
+									    }
 										lblStatus.setText("Uninstalling");
 										
 										if (Updater.compareVersion(thisVerInfo.getVersion(), "1.0.1") == -1){
@@ -222,7 +261,7 @@ public class UIFrame extends JFrame {
 												DebugDump.showDebugDialog(e.getDump());
 											}
 										} else {
-											ProcessBuilder pb = new ProcessBuilder("cmd.exe", "/C", "\"C:\\Program Files\\osumer\\osumer.exe\" -uninstall -quiet");
+											ProcessBuilder pb = new ProcessBuilder("java.exe", "-jar", "\"C:\\Program Files\\osumer\\osumer.exe\"", "-uninstall", "-quiet");
 											try {
 												Process proc = pb.start();
 												BufferedReader reader = new BufferedReader(new InputStreamReader(proc.getInputStream()));
@@ -277,6 +316,11 @@ public class UIFrame extends JFrame {
 									}
 									
 									if (stillInstall){
+                                        try {
+                                            lblStatus.setText("Cooling down...");
+                                            Thread.sleep(5000);
+                                        } catch (InterruptedException e) {
+                                        }
 										lblStatus.setText("Installing");
 										
 										if (Updater.compareVersion(verInfo.getVersion(), "1.0.1") == -1){
@@ -297,7 +341,8 @@ public class UIFrame extends JFrame {
 												DebugDump.showDebugDialog(e.getDump());
 											}
 										} else {
-											ProcessBuilder procb = new ProcessBuilder("cmd.exe", "/C", "\"" + dwnFolder + dwnFile + ".exe\" -install -quiet");
+										    System.out.println("\"" + dwnFolder + dwnFile + ".exe\"");
+											ProcessBuilder procb = new ProcessBuilder("java.exe", "-jar", "\"" + dwnFolder + dwnFile + ".exe\"", "-install", "-quiet");
 											try {
 												Process proc = procb.start();
 												BufferedReader reader = new BufferedReader(new InputStreamReader(proc.getInputStream()));
@@ -394,4 +439,13 @@ public class UIFrame extends JFrame {
 			thread.start();
 		}
 	}
+
+    public static boolean testPortFree(int port) {
+        try {
+            new ServerSocket(port).close();
+            return true;
+        } catch (IOException e) {
+            return false;
+        }
+    }
 }
