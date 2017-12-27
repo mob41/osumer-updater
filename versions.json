@@ -126,6 +126,13 @@
                     "jar_link": "https://github.com/mob41/osumer/releases/download/2.0.0-SNAPSHOT-b2/osumer.jar",
                     "ended": false,
 					"desc": "This is a experimental release of osumer2. There might be bugs in it, but it should work properly. Please do not hesitate reporting those bugs.\n\n- Fixed bug pro-longed idle -> auto logged out.\n    - check logged in status and re-login if logged out\n- UI invalid WARNING of no osu! account\n- Reject new beatmap web links (e.g. \"https://osu.ppy.sh/b/1483372\"\n    - more than 6 digits beatmap links are rejected\n    - TODO: Implement new webpage links parsing\n\nSome features such as beatmap managing, Plugins, Security and Getting Started are not implemented. These will be added in further builds.\nTutorials can be found at \"https://github.com/mob41/osumer/wiki/osumer-tutorial\" It is still building though."
+                },
+                {
+                    "web_link": "https://github.com/mob41/osumer/releases/2.0.0-SNAPSHOT-b3/",
+                    "exe_link": "https://github.com/mob41/osumer/releases/download/2.0.0-SNAPSHOT-b3/osumer.exe",
+                    "jar_link": "https://github.com/mob41/osumer/releases/download/2.0.0-SNAPSHOT-b3/osumer.jar",
+                    "ended": false,
+					"desc": "This is a experimental release of osumer2. There might be bugs in it, but it should work properly. Please do not hesitate reporting those bugs.\n\n- Fixed unwanted \"You must be logged in...\" dialog when searching beatmaps (Issue #8) \n\nSome features such as beatmap managing, Plugins, Security and Getting Started are not implemented. These will be added in further builds.\nTutorials can be found at \"https://github.com/mob41/osumer/wiki/osumer-tutorial\" It is still building though."
                 }
             ]
         },
