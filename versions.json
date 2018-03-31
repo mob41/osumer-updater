@@ -133,6 +133,13 @@
                     "jar_link": "https://github.com/mob41/osumer/releases/download/2.0.0-SNAPSHOT-b3/osumer.jar",
                     "ended": false,
 					"desc": "This is a experimental release of osumer2. There might be bugs in it, but it should work properly. Please do not hesitate reporting those bugs.\n\n- Fixed unwanted \"You must be logged in...\" dialog when searching beatmaps (Issue #8) \n\nSome features such as beatmap managing, Plugins, Security and Getting Started are not implemented. These will be added in further builds.\nTutorials can be found at \"https://github.com/mob41/osumer/wiki/osumer-tutorial\" It is still building though."
+                },
+                {
+                    "web_link": "https://github.com/mob41/osumer/releases/2.0.0-SNAPSHOT-b4/",
+                    "exe_link": "https://github.com/mob41/osumer/releases/download/2.0.0-SNAPSHOT-b4/osumer.exe",
+                    "jar_link": "https://github.com/mob41/osumer/releases/download/2.0.0-SNAPSHOT-b4/osumer.jar",
+                    "ended": false,
+					"desc": "!!! This is a must to update to this version. This version contains code to temporarily solve the osu!-web new site problems. !!!\n\nThis is a experimental release of osumer2. There might be bugs in it, but it should work properly. Please do not hesitate reporting those bugs.\n\n- Includes legacy old-site redirecting/parsing\n\nSome features such as beatmap managing, Plugins, Security and Getting Started are not implemented. These will be added in further builds.\n\nTutorials can be found at \"https://github.com/mob41/osumer/wiki/osumer-tutorial\" It is still building though."
                 }
             ]
         },
