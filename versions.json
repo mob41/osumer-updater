@@ -147,6 +147,13 @@
                     "jar_link": "https://github.com/mob41/osumer/releases/download/2.0.0-SNAPSHOT-b5/osumer.jar",
                     "ended": false,
 					"desc": "This is a experimental release of osumer2. There might be bugs in it, but it should work properly. Please do not hesitate reporting those bugs.\n\nChange-log:\n  - Minor UTF-8 encoding fixes in log-in request\n  - Solves #19\n\nSome features such as beatmap managing, Plugins, Security and Getting Started are not implemented. These will be added in further builds.\n\nTutorials can be found at \"https://github.com/mob41/osumer/wiki/osumer-tutorial\" It is still building though."
+                },
+                {
+                    "web_link": "https://github.com/mob41/osumer/releases/2.0.0-SNAPSHOT-b6/",
+                    "exe_link": "https://github.com/mob41/osumer/releases/download/2.0.0-SNAPSHOT-b6/osumer-setup.msi",
+                    "jar_link": "https://github.com/mob41/osumer/releases/download/2.0.0-SNAPSHOT-b6/osumer-setup.msi",
+                    "ended": false,
+					"desc": "Change-log:\n\n- Uses JavaFX UI\n- Uses Java RMI between Daemon-UI Communication\n- Adds overlay into osu! for monitoring download progress\n- Better debug dumps system\n- Uses Windows Installer for packaging\n- Limits the use of heap space\n- Solves #11 , #15 , #24\n\n## Known issues:\n\n- Beatmap searching features are removed currently\n- \"View Dumps\" does not work at the moment. Navigate to \"%localappdata%\osumerExpress\dumps\" instead for viewing dumps.\n- \"Start\", \"Pause\", \"Stop\" buttons in \"Queues\" are not implemented to work at the moment."
                 }
             ]
         },
