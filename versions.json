@@ -154,6 +154,13 @@
                     "jar_link": "https://github.com/mob41/osumer/releases/download/2.0.0-SNAPSHOT-b6/osumer-setup.msi",
                     "ended": false,
 					"desc": "Change-log:\n\n- Uses JavaFX UI\n- Uses Java RMI between Daemon-UI Communication\n- Adds overlay into osu! for monitoring download progress\n- Better debug dumps system\n- Uses Windows Installer for packaging\n- Limits the use of heap space\n- Solves #11 , #15 , #24\n\n## Known issues:\n\n- Beatmap searching features are removed currently\n- \"View Dumps\" does not work at the moment. Navigate to \"%localappdata%\\osumerExpress\\dumps\" instead for viewing dumps.\n- \"Start\", \"Pause\", \"Stop\" buttons in \"Queues\" are not implemented to work at the moment."
+                },
+                {
+                    "web_link": "https://github.com/mob41/osumer/releases/2.0.0-SNAPSHOT-b7/",
+                    "exe_link": "https://github.com/mob41/osumer/releases/download/2.0.0-SNAPSHOT-b7/osumer-setup.msi",
+                    "jar_link": "https://github.com/mob41/osumer/releases/download/2.0.0-SNAPSHOT-b7/osumer-setup.msi",
+                    "ended": false,
+					"desc": "Change-log:\n\n- Adds metrics testing\n- Better error reporting\n- Longer timeout for launcher\n- Solves #26"
                 }
             ]
         },
