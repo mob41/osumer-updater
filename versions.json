@@ -55,7 +55,7 @@
                     "exe_link": "https://github.com/mob41/osumer/releases/download/1.0.0-SNAPSHOT-b1/osumer.exe",
                     "jar_link": "https://github.com/mob41/osumer/releases/download/1.0.0-SNAPSHOT-b1/osumer.jar",
                     "ended": true,
-					"desc": "Wow, I am glad to introduce osumer version 1.0.0 snapshot version here! In this version, updater things are mainly focused.\n\nChange-log: \n- Added osumer-updater to handle all installations and updates\n- Added change-log viewer\n- Added support for in-app updating\n\nKnown bugs:\n- The application cannot be uninstalled if launched via osumer-updater"
+                    "desc": "Wow, I am glad to introduce osumer version 1.0.0 snapshot version here! In this version, updater things are mainly focused.\n\nChange-log: \n- Added osumer-updater to handle all installations and updates\n- Added change-log viewer\n- Added support for in-app updating\n\nKnown bugs:\n- The application cannot be uninstalled if launched via osumer-updater"
                 }
             ],
             "1.0.1": [
@@ -64,7 +64,7 @@
                     "exe_link": "https://github.com/mob41/osumer/releases/download/1.0.1-SNAPSHOT-b1/osumer.exe",
                     "jar_link": "https://github.com/mob41/osumer/releases/download/1.0.1-SNAPSHOT-b1/osumer.jar",
                     "ended": true,
-					"desc": "This version made minor changes to the updater system.\n\n- Fixes invalid change-log\n- Let install/uninstallation things to be done with the standalone using arugments instead of using osumer-updater\n\nUnfortunately, the following bug still cannot be fixed:\n\n- The application cannot be uninstalled if launched via osumer-updater"
+                    "desc": "This version made minor changes to the updater system.\n\n- Fixes invalid change-log\n- Let install/uninstallation things to be done with the standalone using arugments instead of using osumer-updater\n\nUnfortunately, the following bug still cannot be fixed:\n\n- The application cannot be uninstalled if launched via osumer-updater"
                 }
             ],
             "1.0.2": [
@@ -73,7 +73,7 @@
                     "exe_link": "https://github.com/mob41/osumer/releases/download/1.0.2-SNAPSHOT-b1/osumer.exe",
                     "jar_link": "https://github.com/mob41/osumer/releases/download/1.0.2-SNAPSHOT-b1/osumer.jar",
                     "ended": true,
-					"desc": "Minor bugs fixes after 1.0.1\n\n- Fixes \"This is an old version\" typo\n- Fixes change-log viewer to not be editable\n\nUnfortunately, the following bug still cannot be fixed:\n\n- The application cannot be uninstalled if launched via osumer-updater"
+                    "desc": "Minor bugs fixes after 1.0.1\n\n- Fixes \"This is an old version\" typo\n- Fixes change-log viewer to not be editable\n\nUnfortunately, the following bug still cannot be fixed:\n\n- The application cannot be uninstalled if launched via osumer-updater"
                 }
             ],
             "1.0.3": [
@@ -82,7 +82,7 @@
                     "exe_link": "https://github.com/mob41/osumer/releases/download/1.0.3-SNAPSHOT-b1/osumer.exe",
                     "jar_link": "https://github.com/mob41/osumer/releases/download/1.0.3-SNAPSHOT-b1/osumer.jar",
                     "ended": true,
-					"desc": "This will (might) be the last release of 1.x.x series and I will start developing 2.x.x series.\nFurther releases of 1.x.x are just bugs fixes without major features additions.\nA month later without bugs, this release will be promoted to stable.\n\nIn this version, minor bugs are fixed\n\n- Fixed crashing download when the beatmap name contains special characters (not supported in Windows)\n- Fixed AlwaysOnTop with download dialog\n\nThis bug still exists, and probably won't be fixed if I don't have time:\n\n- Cannot uninstall osumer if launched from osumer-updater (File in use problem, we have to get another process to remove osumer.exe)"
+                    "desc": "This will (might) be the last release of 1.x.x series and I will start developing 2.x.x series.\nFurther releases of 1.x.x are just bugs fixes without major features additions.\nA month later without bugs, this release will be promoted to stable.\n\nIn this version, minor bugs are fixed\n\n- Fixed crashing download when the beatmap name contains special characters (not supported in Windows)\n- Fixed AlwaysOnTop with download dialog\n\nThis bug still exists, and probably won't be fixed if I don't have time:\n\n- Cannot uninstall osumer if launched from osumer-updater (File in use problem, we have to get another process to remove osumer.exe)"
                 }
             ],
             "1.0.4": [
@@ -91,7 +91,7 @@
                     "exe_link": "https://github.com/mob41/osumer/releases/download/1.0.4-SNAPSHOT-b1/osumer.exe",
                     "jar_link": "https://github.com/mob41/osumer/releases/download/1.0.4-SNAPSHOT-b1/osumer.jar",
                     "ended": true,
-					"desc": "This will (might) be the last release of 1.x.x series and I will start developing 2.x.x series.\nFurther releases of 1.x.x are just bugs fixes without major features additions.\nA month later without bugs, this release will be promoted to stable.\n\nMinor bugs fixes, but it seems to major bugs fixes if the user has an space in their names. (e.g. Maria John)\n\n- Fixes installer to decode URL of running file path\n- Code optimizations\n- Copyright optimizations\n\nThis bug still not fixed\n\n- Cannot uninstall osumer if launched from osumer-updater. You just need to use a external osumer (not from Program Files) to uninstall and everything is okay!"
+                    "desc": "This will (might) be the last release of 1.x.x series and I will start developing 2.x.x series.\nFurther releases of 1.x.x are just bugs fixes without major features additions.\nA month later without bugs, this release will be promoted to stable.\n\nMinor bugs fixes, but it seems to major bugs fixes if the user has an space in their names. (e.g. Maria John)\n\n- Fixes installer to decode URL of running file path\n- Code optimizations\n- Copyright optimizations\n\nThis bug still not fixed\n\n- Cannot uninstall osumer if launched from osumer-updater. You just need to use a external osumer (not from Program Files) to uninstall and everything is okay!"
                 }
             ],
             "1.0.5": [
@@ -100,7 +100,7 @@
                     "exe_link": "https://github.com/mob41/osumer/releases/download/1.0.5-SNAPSHOT-b1/osumer.exe",
                     "jar_link": "https://github.com/mob41/osumer/releases/download/1.0.5-SNAPSHOT-b1/osumer.jar",
                     "ended": true,
-					"desc": "This will (might) be the last release of 1.x.x series and I will start developing 2.x.x series.\nFurther releases of 1.x.x are just bugs fixes without major features additions.\nA month later without bugs, this release will be promoted to stable.\n\nMajor bug fixes in this version.\n\n- Fixes download crashes in beatmaps name with special characters that are not supported in Windows\n- Blocks uninstallation if launched in Program Files\n\nThis bug still not fixed\n\n- Cannot uninstall osumer if launched from osumer-updater. You just need to use a external osumer (not from Program Files) to uninstall and everything is okay!"
+                    "desc": "This will (might) be the last release of 1.x.x series and I will start developing 2.x.x series.\nFurther releases of 1.x.x are just bugs fixes without major features additions.\nA month later without bugs, this release will be promoted to stable.\n\nMajor bug fixes in this version.\n\n- Fixes download crashes in beatmaps name with special characters that are not supported in Windows\n- Blocks uninstallation if launched in Program Files\n\nThis bug still not fixed\n\n- Cannot uninstall osumer if launched from osumer-updater. You just need to use a external osumer (not from Program Files) to uninstall and everything is okay!"
                 }
             ],
             "1.0.6": [
@@ -109,7 +109,7 @@
                     "exe_link": "https://github.com/mob41/osumer/releases/download/1.0.6-SNAPSHOT-b1/osumer.exe",
                     "jar_link": "https://github.com/mob41/osumer/releases/download/1.0.6-SNAPSHOT-b1/osumer.jar",
                     "ended": true,
-					"desc": "Ready for osumer2 update! osumer2 is going to be distributed on Late October!\n\nThis will (might) be the last release of 1.x.x series and I will start developing 2.x.x series.\nFurther releases of 1.x.x are just bugs fixes without major features additions.\nA month later without bugs, this release will be promoted to stable.\n\nBug fix(es):\n\n- Fixes osu! account unable to login bug\n    - osu! forum login is now redirected to ```index.php?success=xyzabc``` instead of just ```index.php```\n\nThis bug still not fixed\n\n- Cannot uninstall osumer if launched from osumer-updater. You just need to use a external osumer (not from Program Files) to uninstall and everything is okay!"
+                    "desc": "Ready for osumer2 update! osumer2 is going to be distributed on Late October!\n\nThis will (might) be the last release of 1.x.x series and I will start developing 2.x.x series.\nFurther releases of 1.x.x are just bugs fixes without major features additions.\nA month later without bugs, this release will be promoted to stable.\n\nBug fix(es):\n\n- Fixes osu! account unable to login bug\n    - osu! forum login is now redirected to ```index.php?success=xyzabc``` instead of just ```index.php```\n\nThis bug still not fixed\n\n- Cannot uninstall osumer if launched from osumer-updater. You just need to use a external osumer (not from Program Files) to uninstall and everything is okay!"
                 }
             ],
             "2.0.0": [
@@ -118,49 +118,56 @@
                     "exe_link": "https://github.com/mob41/osumer/releases/download/2.0.0-SNAPSHOT-b1/osumer.exe",
                     "jar_link": "https://github.com/mob41/osumer/releases/download/2.0.0-SNAPSHOT-b1/osumer.jar",
                     "ended": false,
-					"desc": "This is a experimental release of osumer2. There might be bugs in it, but it should work properly. Please do not hesitate reporting those bugs.\n\n- Added queuing\n- Added background downloading\n- Added background download sound\n- Added osumer2 daemon\n- Added beatmap searching and managing\n- Added more customizable preferences\n- Added better updater algorithm\n\nSome features such as beatmap managing, Plugins, Security and Getting Started are not implemented. These will be added in further builds.\nTutorials can be found at \"https://github.com/mob41/osumer/wiki/osumer-tutorial\". It is still building though.\n\nThank you for your support in osumer. Put a star to this project would help me to continue developing in it!"
+                    "desc": "This is a experimental release of osumer2. There might be bugs in it, but it should work properly. Please do not hesitate reporting those bugs.\n\n- Added queuing\n- Added background downloading\n- Added background download sound\n- Added osumer2 daemon\n- Added beatmap searching and managing\n- Added more customizable preferences\n- Added better updater algorithm\n\nSome features such as beatmap managing, Plugins, Security and Getting Started are not implemented. These will be added in further builds.\nTutorials can be found at \"https://github.com/mob41/osumer/wiki/osumer-tutorial\". It is still building though.\n\nThank you for your support in osumer. Put a star to this project would help me to continue developing in it!"
                 },
                 {
                     "web_link": "https://github.com/mob41/osumer/releases/2.0.0-SNAPSHOT-b2/",
                     "exe_link": "https://github.com/mob41/osumer/releases/download/2.0.0-SNAPSHOT-b2/osumer.exe",
                     "jar_link": "https://github.com/mob41/osumer/releases/download/2.0.0-SNAPSHOT-b2/osumer.jar",
                     "ended": false,
-					"desc": "This is a experimental release of osumer2. There might be bugs in it, but it should work properly. Please do not hesitate reporting those bugs.\n\n- Fixed bug pro-longed idle -> auto logged out.\n    - check logged in status and re-login if logged out\n- UI invalid WARNING of no osu! account\n- Reject new beatmap web links (e.g. \"https://osu.ppy.sh/b/1483372\"\n    - more than 6 digits beatmap links are rejected\n    - TODO: Implement new webpage links parsing\n\nSome features such as beatmap managing, Plugins, Security and Getting Started are not implemented. These will be added in further builds.\nTutorials can be found at \"https://github.com/mob41/osumer/wiki/osumer-tutorial\" It is still building though."
+                    "desc": "This is a experimental release of osumer2. There might be bugs in it, but it should work properly. Please do not hesitate reporting those bugs.\n\n- Fixed bug pro-longed idle -> auto logged out.\n    - check logged in status and re-login if logged out\n- UI invalid WARNING of no osu! account\n- Reject new beatmap web links (e.g. \"https://osu.ppy.sh/b/1483372\"\n    - more than 6 digits beatmap links are rejected\n    - TODO: Implement new webpage links parsing\n\nSome features such as beatmap managing, Plugins, Security and Getting Started are not implemented. These will be added in further builds.\nTutorials can be found at \"https://github.com/mob41/osumer/wiki/osumer-tutorial\" It is still building though."
                 },
                 {
                     "web_link": "https://github.com/mob41/osumer/releases/2.0.0-SNAPSHOT-b3/",
                     "exe_link": "https://github.com/mob41/osumer/releases/download/2.0.0-SNAPSHOT-b3/osumer.exe",
                     "jar_link": "https://github.com/mob41/osumer/releases/download/2.0.0-SNAPSHOT-b3/osumer.jar",
                     "ended": false,
-					"desc": "This is a experimental release of osumer2. There might be bugs in it, but it should work properly. Please do not hesitate reporting those bugs.\n\n- Fixed unwanted \"You must be logged in...\" dialog when searching beatmaps (Issue #8) \n\nSome features such as beatmap managing, Plugins, Security and Getting Started are not implemented. These will be added in further builds.\nTutorials can be found at \"https://github.com/mob41/osumer/wiki/osumer-tutorial\" It is still building though."
+                    "desc": "This is a experimental release of osumer2. There might be bugs in it, but it should work properly. Please do not hesitate reporting those bugs.\n\n- Fixed unwanted \"You must be logged in...\" dialog when searching beatmaps (Issue #8) \n\nSome features such as beatmap managing, Plugins, Security and Getting Started are not implemented. These will be added in further builds.\nTutorials can be found at \"https://github.com/mob41/osumer/wiki/osumer-tutorial\" It is still building though."
                 },
                 {
                     "web_link": "https://github.com/mob41/osumer/releases/2.0.0-SNAPSHOT-b4/",
                     "exe_link": "https://github.com/mob41/osumer/releases/download/2.0.0-SNAPSHOT-b4/osumer.exe",
                     "jar_link": "https://github.com/mob41/osumer/releases/download/2.0.0-SNAPSHOT-b4/osumer.jar",
                     "ended": false,
-					"desc": "!!! This is a must to update to this version. This version contains code to temporarily solve the osu!-web new site problems. !!!\n\nThis is a experimental release of osumer2. There might be bugs in it, but it should work properly. Please do not hesitate reporting those bugs.\n\n- Includes legacy old-site redirecting/parsing\n\nSome features such as beatmap managing, Plugins, Security and Getting Started are not implemented. These will be added in further builds.\n\nTutorials can be found at \"https://github.com/mob41/osumer/wiki/osumer-tutorial\" It is still building though."
+                    "desc": "!!! This is a must to update to this version. This version contains code to temporarily solve the osu!-web new site problems. !!!\n\nThis is a experimental release of osumer2. There might be bugs in it, but it should work properly. Please do not hesitate reporting those bugs.\n\n- Includes legacy old-site redirecting/parsing\n\nSome features such as beatmap managing, Plugins, Security and Getting Started are not implemented. These will be added in further builds.\n\nTutorials can be found at \"https://github.com/mob41/osumer/wiki/osumer-tutorial\" It is still building though."
                 },
                 {
                     "web_link": "https://github.com/mob41/osumer/releases/2.0.0-SNAPSHOT-b5/",
                     "exe_link": "https://github.com/mob41/osumer/releases/download/2.0.0-SNAPSHOT-b5/osumer.exe",
                     "jar_link": "https://github.com/mob41/osumer/releases/download/2.0.0-SNAPSHOT-b5/osumer.jar",
                     "ended": false,
-					"desc": "This is a experimental release of osumer2. There might be bugs in it, but it should work properly. Please do not hesitate reporting those bugs.\n\nChange-log:\n  - Minor UTF-8 encoding fixes in log-in request\n  - Solves #19\n\nSome features such as beatmap managing, Plugins, Security and Getting Started are not implemented. These will be added in further builds.\n\nTutorials can be found at \"https://github.com/mob41/osumer/wiki/osumer-tutorial\" It is still building though."
+                    "desc": "This is a experimental release of osumer2. There might be bugs in it, but it should work properly. Please do not hesitate reporting those bugs.\n\nChange-log:\n  - Minor UTF-8 encoding fixes in log-in request\n  - Solves #19\n\nSome features such as beatmap managing, Plugins, Security and Getting Started are not implemented. These will be added in further builds.\n\nTutorials can be found at \"https://github.com/mob41/osumer/wiki/osumer-tutorial\" It is still building though."
                 },
                 {
                     "web_link": "https://github.com/mob41/osumer/releases/2.0.0-SNAPSHOT-b6/",
                     "exe_link": "https://github.com/mob41/osumer/releases/download/2.0.0-SNAPSHOT-b6/osumer-setup.msi",
                     "jar_link": "https://github.com/mob41/osumer/releases/download/2.0.0-SNAPSHOT-b6/osumer-setup.msi",
                     "ended": false,
-					"desc": "Change-log:\n\n- Uses JavaFX UI\n- Uses Java RMI between Daemon-UI Communication\n- Adds overlay into osu! for monitoring download progress\n- Better debug dumps system\n- Uses Windows Installer for packaging\n- Limits the use of heap space\n- Solves #11 , #15 , #24\n\n## Known issues:\n\n- Beatmap searching features are removed currently\n- \"View Dumps\" does not work at the moment. Navigate to \"%localappdata%\\osumerExpress\\dumps\" instead for viewing dumps.\n- \"Start\", \"Pause\", \"Stop\" buttons in \"Queues\" are not implemented to work at the moment."
+                    "desc": "Change-log:\n\n- Uses JavaFX UI\n- Uses Java RMI between Daemon-UI Communication\n- Adds overlay into osu! for monitoring download progress\n- Better debug dumps system\n- Uses Windows Installer for packaging\n- Limits the use of heap space\n- Solves #11 , #15 , #24\n\n## Known issues:\n\n- Beatmap searching features are removed currently\n- \"View Dumps\" does not work at the moment. Navigate to \"%localappdata%\\osumerExpress\\dumps\" instead for viewing dumps.\n- \"Start\", \"Pause\", \"Stop\" buttons in \"Queues\" are not implemented to work at the moment."
                 },
                 {
                     "web_link": "https://github.com/mob41/osumer/releases/2.0.0-SNAPSHOT-b7/",
                     "exe_link": "https://github.com/mob41/osumer/releases/download/2.0.0-SNAPSHOT-b7/osumer-setup.msi",
                     "jar_link": "https://github.com/mob41/osumer/releases/download/2.0.0-SNAPSHOT-b7/osumer-setup.msi",
                     "ended": false,
-					"desc": "Change-log:\n\n- Adds metrics testing\n- Better error reporting\n- Longer timeout for launcher\n- Solves #26"
+                    "desc": "Change-log:\n\n- Adds metrics testing\n- Better error reporting\n- Longer timeout for launcher\n- Solves #26"
+                },
+                {
+                    "web_link": "https://github.com/mob41/osumer/releases/2.0.0-SNAPSHOT-b8/",
+                    "exe_link": "https://github.com/mob41/osumer/releases/download/2.0.0-SNAPSHOT-b8/osumer-setup.msi",
+                    "jar_link": "https://github.com/mob41/osumer/releases/download/2.0.0-SNAPSHOT-b8/osumer-setup.msi",
+                    "ended": false,
+                    "desc": "Change-log:\n\n- Metrics handling"
                 }
             ]
         },
