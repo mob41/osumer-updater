@@ -168,6 +168,13 @@
                     "jar_link": "https://github.com/mob41/osumer/releases/download/2.0.0-SNAPSHOT-b8/osumer-setup.msi",
                     "ended": false,
                     "desc": "Change-log:\n\n- Metrics handling"
+                },
+                {
+                    "web_link": "https://github.com/mob41/osumer/releases/2.0.0-SNAPSHOT-b9/",
+                    "exe_link": "https://github.com/mob41/osumer/releases/download/2.0.0-SNAPSHOT-b9/osumer-setup.msi",
+                    "jar_link": "https://github.com/mob41/osumer/releases/download/2.0.0-SNAPSHOT-b9/osumer-setup.msi",
+                    "ended": false,
+                    "desc": "Change-log:\n\n- Stop showing overlay license agreement once agreed\n- Only show overlay on download"
                 }
             ]
         },
