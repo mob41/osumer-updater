@@ -1,0 +1,16 @@
+{
+    "announcements": [
+      {
+        "time": 1546344732000,
+        "text": "Testing 1"
+      },
+      {
+        "time": 1577873410000,
+        "text": "Testing 2"
+      },
+      {
+        "time": 1593593165000,
+        "text": "Testing 3"
+      }
+    ]
+}
