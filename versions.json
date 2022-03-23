@@ -182,6 +182,13 @@
                     "jar_link": "https://github.com/mob41/osumer/releases/download/2.0.0-SNAPSHOT-b10/osumer-setup.msi",
                     "ended": false,
                     "desc": "Change-log:\n\n - Fixes login issue #32\n- Adds announcements\n- Tweaks song/beatmap ID input UI"
+                },
+                {
+                    "web_link": "https://github.com/mob41/osumer/releases/2.0.0-SNAPSHOT-b11/",
+                    "exe_link": "https://github.com/mob41/osumer/releases/download/2.0.0-SNAPSHOT-b11/osumer-setup.msi",
+                    "jar_link": "https://github.com/mob41/osumer/releases/download/2.0.0-SNAPSHOT-b11/osumer-setup.msi",
+                    "ended": false,
+                    "desc": "Change-log:\n\n - Applies fixes from #47 to allow new beatmaps to be downloaded"
                 }
             ]
         },
